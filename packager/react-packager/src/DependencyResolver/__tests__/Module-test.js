@@ -22,7 +22,7 @@ jest
 var Fastfs = require('../fastfs');
 var Module = require('../Module');
 var ModuleCache = require('../ModuleCache');
-var Helpers = require('../DependencyGraph/Helpers');
+var Helpers = require('../DependencyGraph/DependencyGraphHelpers');
 var Promise = require('promise');
 var fs = require('fs');
 var FileWatcher = require('../../FileWatcher');
