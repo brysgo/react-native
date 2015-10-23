@@ -18,7 +18,7 @@ const getPontentialPlatformExt = require('../../lib/getPlatformExtension');
 const isAbsolutePath = require('absolute-path');
 const path = require('path');
 const util = require('util');
-const Helpers = require('./Helpers');
+const Helpers = require('./DependencyGraphHelpers');
 const ResolutionRequest = require('./ResolutionRequest');
 const ResolutionResponse = require('./ResolutionResponse');
 const HasteMap = require('./HasteMap');
@@ -107,7 +107,7 @@ class DependencyGraph {
 
     this._fastfs.on('change', this._processFileChange.bind(this));
 
-    this._moduleCache = new ModuleCache(this._fastfs, this._cache);
+    this._moduleCache = new ModuleCache(this._fastfs, this._cache, this._helpers);
 
     this._hasteMap = new HasteMap({
       fastfs: this._fastfs,
